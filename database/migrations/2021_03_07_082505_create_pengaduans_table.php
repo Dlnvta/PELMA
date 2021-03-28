@@ -19,6 +19,7 @@ class CreatePengaduansTable extends Migration
             $table->string('judul_pengaduan');
             $table->text('isi_pengaduan');
             $table->string('lokasi');
+            $table->string('detail_lokasi');
             $table->string('foto');
             $table->enum('status', ['pending','proses', 'selesai']);
             $table->integer('user_id')->unsigned();
