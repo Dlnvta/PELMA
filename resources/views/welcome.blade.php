@@ -43,16 +43,16 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="" class="logo d-flex align-items-center">
-        <img src="assets2/img/pena.jpg" alt="">
+        <img src="assets2/img/logo.png" alt="">
         <span>PELMA</span>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#values">Procedure</a></li>
-          <li><a class="nav-link scrollto" href="{{ route('login') }}">Login</a></li>
-          <li><a class="nav-link scrollto" href="{{ route('register') }}">Register</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">Pelma</a></li>
+          <li><a class="nav-link scrollto" href="#values">Panduan</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('login') }}">Masuk</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('register') }}">Daftar</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -66,7 +66,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">Pelaporan Anda Kami Tanggapi</h1>
+          <h1 data-aos="fade-up">Pelaporan Masyarakat di Kecamatan Dawuan</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">Bersama-sama memperbaiki kehidupan bermasyarakat yang lebih baik</h2>
           <div data-aos="fade-up" data-aos-delay="600">
           </div>

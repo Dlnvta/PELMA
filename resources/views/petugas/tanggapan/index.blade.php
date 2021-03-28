@@ -12,7 +12,7 @@
 			        <!-- Card Header - Accordion -->
 			        <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
 			            role="button" aria-expanded="true" aria-controls="collapseCardExample">
-			            <h6 class="m-0 font-weight-bold text-primary">{{ $pengaduan->judul_pengaduan }} - {{ $pengaduan->lokasi }} </h6>
+			            <h6 class="m-0 font-weight-bold text-primary">{{ $pengaduan->judul_pengaduan }} di {{ $pengaduan->lokasi }} </h6>
 			        </a>
 			        <!-- Card Content - Collapse -->
 			        <div class="collapse show" id="collapseCardExample">
@@ -32,6 +32,7 @@
 							@endif
 							
 			            	<p>{{ $pengaduan->isi_pengaduan }}</p>
+			            	<p>Detail Lokasi : {{ $pengaduan->detail_lokasi }}</p>
 			            </div>
 			        </div>
 			    </div>

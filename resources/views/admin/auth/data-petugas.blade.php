@@ -1,73 +1,97 @@
-@extends ('layouts/main')
-@section ('title', 'PELMA')
+@extends('layouts.main')
+@section('title', 'PELMA')
 
+@section('content')
 
-@section ('content')
-
-    <!-- Begin Page Content -->
+<!-- Begin Page Content -->
     <div class="container-fluid">
-
         <!-- Page Heading -->
-            <h1 class="h3 mb-4 text-gray-800">Data Petugas</h1>
-            @if (session('status'))
-			<div class="alert alert-primary alert-dismissible fade show" role="alert">
-				<strong>Berhasil!</strong> {{ session('status') }}
-				<button type="button" class="close" data-dismis="alert" aria-lable="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			@endif
-                <a href="{{ route('admin.petugas.kirim')}}" class="my-3 d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                data-toggle="modal" data-target="#exampleModal"><i
-                class="fas fa- fa-sm text-white-50"></i> Tambah Petugas</a>
-
-                    <div class="row">
-                        <div class="col-lg-8 mb-4">
-                            <div class="card shadow mb-4">
-                                    <div  div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">
-                                            <form class="form-inline">
-                                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="
-                                                Search">
-                                                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                                            </form>
-                                        </h6>
-                                    </div>
-                                <div class="card-body">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspasing="0">
-                                            <thead>
-                                                <tr>
-                                                <th scope="col">No</th>
-                                                <th scope="col">Nama</th>
-                                                <th scope="col">Email</th>
-                                                <th scope="col">Role</th>
-                                                <th scope="col">Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ( $petugas as $item)
-                                                <tr>
-                                                <th scope="row">{{$loop->iteration }}</th>
-                                                <td>{{ $item->name }}</td>
-                                                <td>{{ $item->email }}</td>
-                                                <td>{{ implode(', ', $item->roles()->get()->pluck('name')->toArray()) }}</td>
-                                                <td>
-                                                    <div class="row">
-                                                    <a class="mx-3 badge badge-primary" href="{{ route('admin.detail.petugas', $item->id) }}">Detail</a>
-                                                    </div>
-                                                </td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                    </table> 
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    
+        @if (session('status'))
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+    	<strong>Berhasil</strong> {{ session('status') }}
     </div>
+    @endif
+        <h1 class="h3 mb-4 text-gray-800">Data Petugas</h1>
+            <h6 class="m-0 font-weight-bold text-primary">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </h6>
+        <button href="{{ route('admin.petugas.kirim') }}" class="my-3 d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  data-toggle="modal" data-target="#exampleModal"><i
+            class="fas fa fa-sm text-white-50"></i>Tambah Petugas</button>
+	        <div class="row">
+	        	<div class="col-lg-6 mb-4">
+		            <div class="card shadow mb-4">
+						<div class="card-header py-3">
+		                    <h6 class="m-0 font-weight-bold text-gray-800">Petugas</h6>
+		                </div>
+						<div class="row">
+							<div class="card-body">
+			                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+								  <thead>
+								    <tr>
+								      <th scope="col">No</th>
+								      <th scope="col">Nama</th>
+								      <th scope="col">Email</th>
+								      <th scope="col">Aksi</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								  	@foreach ($petugas as $item)							  	
+								    <tr>
+								      <th scope="row">{{ $loop->iteration }}</th>
+								      <td>{{ $item->name }}</td>
+								      <td>{{ $item->email }}</td>
+								      <td>
+								      	<a class="badge badge-primary" href="{{ route('admin.detail.petugas', $item->id) }}">Detail</a>
+								      </td>
+								    </tr>
+								    @endforeach
+								  </tbody>
+								</table>
+			                </div>
+						</div>	                
+		            </div>
+		        </div>
 
+		        <div class="col-lg-6 mb-4">
+		            <div class="card shadow mb-4">
+		                <div class="card-header py-3">
+		                    <h6 class="m-0 font-weight-bold text-gray-800">Admin</h6>
+		                </div>
+						<div class="row">
+							<div class="card-body">			                    
+			                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+								  <thead>
+								    <tr>
+								      <th scope="col">No</th>
+								      <th scope="col">Nama</th>
+								      <th scope="col">Email</th>
+								      <th scope="col">Aksi</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								  	@foreach ($admin as $item)							  	
+								    <tr>
+								      <th scope="row">{{ $loop->iteration }}</th>
+								      <td>{{ $item->name }}</td>
+								      <td>{{ $item->email }}</td>
+								      <td>
+								      	<a class="badge badge-primary" href="{{ route('admin.detail.petugas', $item->id) }}">Detail</a>
+								      </td>
+								    </tr>
+								    @endforeach
+								  </tbody>
+								</table>
+			                </div>
+						</div>	                
+		            </div>
+		        </div>
+
+	        </div>
+
+        </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

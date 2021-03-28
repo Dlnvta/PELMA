@@ -29,7 +29,7 @@
 		            		@csrf
 						  <div class="form-group">
 						    <label for="exampleInputEmail1">Judul Pengaduan</label>
-						    <input name="judul_pengaduan" type="text" class="form-control @error('judul_pengaduan') is-invalid @enderror" placeholder="Judul Pengaduan">
+						    <input name="judul_pengaduan" type="text" class="form-control @error('judul_pengaduan') is-invalid @enderror">
 
 
                             @error('judul_pengaduan')
@@ -47,7 +47,7 @@
 
 						  <div class="form-group">
 						    <label for="exampleInputPassword1">Isi Pengaduan</label>
-						    <textarea name="isi_pengaduan" type="text" class="form-control @error('isi_pengaduan') is-invalid @enderror" placeholder="Isi Aduan"></textarea>
+						    <textarea name="isi_pengaduan" type="text" class="form-control @error('isi_pengaduan') is-invalid @enderror"></textarea>
 
 						    @error('isi_pengaduan')
                                 <span class="invalid-feedback" role="alert">
@@ -73,6 +73,17 @@
 						  </div>
 
 						  <div class="form-group">
+						    <label for="exampleInputPassword1">Detail Lokasi</label>
+						    <textarea name="detail_lokasi" type="text" class="form-control @error('detail_lokasi') is-invalid @enderror"></textarea>
+
+						    @error('detail_lokasi')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+						  </div>
+
+						  <div class="form-group">
 						    <label for="exampleFormControlFile1">Bukti</label>
 						    <input name="foto" type="file" class="form-control @error('foto') is-invalid @enderror" id="exampleFormControlFile1">
 							@error('foto')
@@ -90,11 +101,11 @@
 		    </div>
 	    </div>
 
-		<div class="col-lg-5">
+		<div class="col-lg-6">
 			<div class="card shadow mb-4">
 				<a href="#collapsCardExample" class="d-block card-header py-3 alert-primary" data-toggle="collapse"
 				 role="button" aria-expanded="true" aria-controls="collapseCardExample">
-				 <h6 class="m-0 font-weight-bold text-primary"> Pengaduan Saya</h6>
+				 <h6 class=" font-weight-bold text-primary"> Pengaduan Saya</h6>
 				</a>
 				<div class="collapse show" id="collapseCardExample">
 					<div class="card-body"> 

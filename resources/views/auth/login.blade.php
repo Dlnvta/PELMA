@@ -67,10 +67,10 @@
                                         <div class="form-group row">
                                         </div>
                                    
-                                        <button type="submit" class="btn btn-primary btn-user btn-block"> Login </button>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block"> Masuk </button>
                                         <hr>
                                             <div class="text-center">
-                                                <a class="small" href="{{ route('register') }}"> Belum Punya Akun? Register! </a>
+                                                <a class="small" href="{{ route('register') }}"> Belum Punya Akun? Daftar! </a>
                                             </div>
                                     </form>
                                 </div>

@@ -15,7 +15,7 @@
     </div>
     @endif
     <div class="row">
-	    <div class="col-lg-7">
+	    <div class="col-lg-8">
 		    <div class="card shadow mb-4">
 		        <!-- Card Header - Accordion -->
 		        <a href="#collapseCardExample" class="d-block card-header py-3 alert-primary" data-toggle="collapse"
@@ -69,6 +69,17 @@
 							</select>
 
 							@error('lokasi')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+						  </div>
+
+						  <div class="form-group">
+						    <label for="exampleInputPassword1">Isi Pengaduan</label>
+						    <textarea name="detail_lokasi" type="text" class="form-control @error('detail_lokasi') is-invalid @enderror" >{{ $pengaduan->detail_lokasi }}</textarea>
+
+						    @error('detail_lokasi')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

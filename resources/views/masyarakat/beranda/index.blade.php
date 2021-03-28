@@ -26,7 +26,7 @@
 		</div>
 	@endif
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-12">
 					@foreach( $pengaduan as $item )
 						<div class="card shadow mb-4">
 							<!-- Card Header - Accordion -->

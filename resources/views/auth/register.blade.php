@@ -80,7 +80,7 @@
                                     </div>   
                                     
                                     <div class="col-sm-6">
-                                        <input onkeypress="return hanyaAngka(event)" type="text" class="form-control form-control-user @error('telp') is-invalid @enderror" name="telp" placeholder="Telp" value="{{ old('telp') }}">
+                                        <input onkeypress="return hanyaAngka(event)" type="text" class="form-control form-control-user @error('telp') is-invalid @enderror" name="telp" placeholder="No Telp" value="{{ old('telp') }}">
 
                                         @error('telp')
                                             <span class="invalid-feedback" role="alert">
@@ -109,10 +109,10 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary btn-user btn-block"> {{ __('Register') }} </button>
+                                <button type="submit" class="btn btn-primary btn-user btn-block"> {{ __('Daftar') }} </button>
                                 <hr>
                                     <div class="text-center">
-                                        <a class="small" href="{{ route('login') }}"> Sudah Punya Akun? Login!</a>
+                                        <a class="small" href="{{ route('login') }}"> Sudah Punya Akun? Masuk!</a>
                                     </div>
                             </form>
                             
@@ -140,7 +140,7 @@
 
     return false;
     return true;
-}
+    }
 </script>
 
 </body>
