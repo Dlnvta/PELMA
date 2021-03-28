@@ -57,6 +57,7 @@ class AduanController extends Controller
             'judul_pengaduan'   => 'required|max:64',
             'isi_pengaduan'     => 'required',
             'lokasi'            => 'required',
+            'detail_lokasi'     => 'required',
             'foto'              => 'required|mimes:jpeg,jpg,png|max:4000',
             'nik'               => 'required',
         ]);
@@ -72,6 +73,7 @@ class AduanController extends Controller
             'nik'                   => $request->nik,
             'judul_pengaduan'       => $request->judul_pengaduan, 
             'lokasi'                => $request->lokasi,
+            'detail_lokasi'         => $request->detail_lokasi,
             'isi_pengaduan'         => $request->isi_pengaduan,
             'foto'                  => 'uploads/'.$namaGambar,
             'status'                => 'pending',
@@ -109,6 +111,7 @@ class AduanController extends Controller
             'judul_pengaduan'   => 'required|max:64',
             'isi_pengaduan'     => 'required',
             'lokasi'            => 'required',
+            'detail_lokasi'     => 'required',
             'foto'              => 'required|mimes:jpeg,jpg,png|max:4000',
             'nik'               => 'required',
             'status'            => 'required',
@@ -126,6 +129,7 @@ class AduanController extends Controller
             'judul_pengaduan'   => $request->judul_pengaduan, 
             'isi_pengaduan'     => $request->isi_pengaduan,
             'lokasi'            => $request->lokasi,
+            'detail_lokasi'     => $request->detail_lokasi,
             'foto'              => 'uploads/'.$namaGambar,
             'status'            => $request->status,
         ]);

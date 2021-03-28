@@ -11,7 +11,7 @@ class Pengaduan extends Model
     use softDeletes;
 
     protected $fillable = [
-        'tanggal_pengaduan', 'judul_pengaduan', 'isi_pengaduan','lokasi', 'foto', 'status', 'user_id'
+        'tanggal_pengaduan', 'judul_pengaduan', 'isi_pengaduan','lokasi', 'detail_lokasi','foto', 'status', 'user_id'
     ];
 
     public function users()

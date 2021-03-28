@@ -74,8 +74,13 @@ class AuthController extends Controller
             $q->where("name", "petugas");
         })->paginate(50);
 
+        $admin       = User::whereHas("roles", function($q){
+            $q->where("name", "admin");
+        })->paginate(50);
+
     	return view('admin.auth.data-petugas', [
     		'petugas'   => $petugas,
+            'admin'     => $admin,
     	]);
     }
 
