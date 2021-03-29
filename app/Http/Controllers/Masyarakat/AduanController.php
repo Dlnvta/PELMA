@@ -112,11 +112,13 @@ class AduanController extends Controller
             'isi_pengaduan'     => 'required',
             'lokasi'            => 'required',
             'detail_lokasi'     => 'required',
-            'foto'              => 'required|mimes:jpeg,jpg,png|max:4000',
+            'foto'              => 'mimes:jpeg,jpg,png|max:4000',
             'nik'               => 'required',
             'status'            => 'required',
         ]);
-
+        
+        if ($request->foto)
+        {
         $foto                   = $request->foto;
         $namaGambar             = date('YmdHis') . "." . $foto->getClientOriginalExtension();
         $lokasiGambar           = 'uploads/'; // upload path
@@ -133,8 +135,23 @@ class AduanController extends Controller
             'foto'              => 'uploads/'.$namaGambar,
             'status'            => $request->status,
         ]);
+        return redirect()->back()->with('status', 'Edit Berhasil');
+        } 
+        else 
+        {
+            Pengaduan::find($id)->update([
+                'user_id'           => Auth::id(),
+                'tanggal_pengaduan' => Carbon::now(),
+                'nik'               => $request->nik,
+                'judul_pengaduan'   => $request->judul_pengaduan, 
+                'isi_pengaduan'     => $request->isi_pengaduan,
+                'lokasi'            => $request->lokasi,
+                'detail_lokasi'     => $request->detail_lokasi,
+                'status'            => $request->status,
+        ]);
         
         return redirect()->back()->with('status', 'Edit Berhasil');
+        }
     }
 
     //Hapus Pengaduan Saya

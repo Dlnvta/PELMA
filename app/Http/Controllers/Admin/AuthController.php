@@ -39,7 +39,7 @@ class AuthController extends Controller
 
     //Data Pengaduan
     public function data_aduan() {
-        $pengaduan = Pengaduan::where('status', '!=', 'selesai')->get();
+        $pengaduan = Pengaduan::orderBy('id', 'DESC')->paginate(2);
 
         return view('admin.auth.data-aduan', [
             'pengaduan' => $pengaduan,
@@ -138,7 +138,7 @@ class AuthController extends Controller
     public function petugas_nonaktif($id)
     {
         User::destroy($id);
-        return redirect()->route('admin.petugas')->with ('status', 'Berhasil Dinonaktifkan');;
+        return redirect()->route('admin.petugas')->with ('status', 'Berhasil Dinonaktifkan');
     }
 
     /*public function edit_petugas($id)
@@ -202,10 +202,11 @@ class AuthController extends Controller
     //Report
     public function pengaduan() {
         $desa               = Lokasi::all();
-        $pengaduan          = Pengaduan::orderBy('id','DESC')->paginate(100);
+        $pengaduan          = Pengaduan::orderBy('id','DESC')->paginate(5);
 
         return view ('admin.report.pengaduan', compact('pengaduan'),[
             'desa'  => $desa,
+            
         ]);
     }
 
@@ -228,9 +229,22 @@ class AuthController extends Controller
     {
         $pengaduan          = Pengaduan::with('users')->where('lokasi',[$lokasi])->get();
         $lokasi             = $lokasi;
+
         return view ('admin.report.pengaduan-lokasi', [
             'pengaduan'     => $pengaduan,
             'lokasi'        => $lokasi,
+        ]);
+    }
+
+    //Report Perstatus
+    public function cetak_aduan_status ($status)
+    {
+        $pengaduan = Pengaduan::with('users')->where('status', [$status])->get();
+        $status    = $status;
+
+        return view ('admin.report.pengaduan-status', [
+            'pengaduan' => $pengaduan,
+            'status'    => $status,
         ]);
     }
 }

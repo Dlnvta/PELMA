@@ -15,12 +15,6 @@
                     <i class="fas fa-fw fa-home"></i>
                     <span>Beranda</span></a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('admin.data.pengaduan') }}">
-                    <i class="fas fa-fw fa-book"></i>
-                    <span>Data Pengaduan</span></a>
-            </li>
             
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route ('admin.petugas') }}">

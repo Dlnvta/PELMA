@@ -53,6 +53,7 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'admin'])->name(
     Route::get('/pengaduan/report/tanggal/{tglAwal}/{tglAkhir}', 'AuthController@cetak_aduan_pertanggal')->
     name('pengaduan/report/tanggal');
     Route::get('/pengaduan/report/lokasi/{lokasi}', 'AuthController@cetak_aduan_lokasi')->name('pengaduan/report/lokasi');
+    Route::get('/pengaduan/report/status/{status}', 'AuthController@cetak_aduan_status')->name('pengaduan/report/status');
 });
 
 // PETUGAS

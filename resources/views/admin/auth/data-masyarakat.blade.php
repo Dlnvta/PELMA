@@ -20,7 +20,7 @@
 		            <div class="card shadow mb-4">
 		                <div class="card-header py-3">
 		                    <h6 class="m-0 font-weight-bold text-primary">
-							<form class="form-inline ">
+							<form class="form-inline" action="{{ route ('admin.aduan.search') }}" method="post">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
                             </form>

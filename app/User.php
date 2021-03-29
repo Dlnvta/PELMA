@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\softDeletes;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable, softDeletes;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
