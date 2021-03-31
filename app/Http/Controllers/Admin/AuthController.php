@@ -70,17 +70,13 @@ class AuthController extends Controller
     
     //Data Petugas
     public function petugas() {
-    	$petugas        = User::whereHas("roles", function($q){
-            $q->where("name", "petugas");
-        })->paginate(50);
-
-        $admin       = User::whereHas("roles", function($q){
-            $q->where("name", "admin");
-        })->paginate(50);
+    	$petugas      = User::whereHas("roles", function($q){
+            $q->where("name", "!=", "masyarakat");
+        })->get();
 
     	return view('admin.auth.data-petugas', [
     		'petugas'   => $petugas,
-            'admin'     => $admin,
+
     	]);
     }
 
@@ -93,7 +89,7 @@ class AuthController extends Controller
             'nik'               => ['required', 'digits:16'],
             'email'             => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password'          => ['required', 'string', 'min:6', 'confirmed'],
-            'role'              =>['required'],
+            'role'              => ['required'],
         ], [
             'name.required'         => 'Nama harus diisi!',
             'telp.required'         => 'Nomor telpon harus diisi!',
@@ -135,10 +131,10 @@ class AuthController extends Controller
     }
 
     //Nonaktif Petugas
-    public function petugas_nonaktif($id)
+    public function petugas_hapus($id)
     {
         User::destroy($id);
-        return redirect()->route('admin.petugas')->with ('status', 'Berhasil Dinonaktifkan');
+        return redirect()->route('admin.petugas')->with ('status', 'Berhasil Dihapus');
     }
 
     /*public function edit_petugas($id)
@@ -202,7 +198,7 @@ class AuthController extends Controller
     //Report
     public function pengaduan() {
         $desa               = Lokasi::all();
-        $pengaduan          = Pengaduan::orderBy('id','DESC')->paginate(5);
+        $pengaduan          = Pengaduan::all();
 
         return view ('admin.report.pengaduan', compact('pengaduan'),[
             'desa'  => $desa,

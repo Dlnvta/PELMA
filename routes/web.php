@@ -44,7 +44,7 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'admin'])->name(
     //detail petugas
     Route::get('/detail/{id}', 'AuthController@detail_petugas')->name('detail.petugas');
     //nonaktif petugas
-    Route::delete('/nonaktif/{id}', 'AuthController@petugas_nonaktif')->name('nonaktif.petugas');
+    Route::delete('/hapus/{id}', 'AuthController@petugas_hapus')->name('hapus.petugas');
     //masyarakat
     Route::get('/masyarakat', 'AuthController@masyarakat')->name('masyarakat');
     Route::get('/detail/masyarakat/{id}', 'AuthController@detail_masyarakat')->name('detail.masyarakat');
@@ -90,6 +90,4 @@ Route::namespace('Masyarakat')->prefix('masyarakat')->middleware(['auth', 'masya
     //edit pengaduan
     Route::get('/edit/pengaduan/{id}', 'AduanController@edit')->name('edit');
     Route::patch('/edit/pengaduan/{id}/kirim', 'AduanController@edit_kirim')->name('edit.kirim');
-    //hapus pengaduan
-    Route::delete('/hapus/{id}', 'AduanController@hapus_pengaduan')->name('hapus.pengaduan');
 });
