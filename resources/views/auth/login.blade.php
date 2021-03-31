@@ -44,7 +44,7 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user @error('email') is-invalid @enderror"
                                                 id="email" aria-describedby="emailHelp"
-                                                name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                                name="email" placeholder="Email" value="{{ old('email') }}"  autocomplete="email" autofocus>
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -55,7 +55,7 @@
 
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror"
-                                                id="exampleInputPassword" name="password" placeholder="Password" required autocomplete="current-password">
+                                                id="exampleInputPassword" name="password" placeholder="Password"  autocomplete="current-password">
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">

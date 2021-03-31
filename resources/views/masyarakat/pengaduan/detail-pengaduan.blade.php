@@ -24,23 +24,17 @@
 								<p class="badge badge-pill badge-success mx-4">{{$pengaduan->status}} </p>
 								@endif</li>
 		                  		<li class="list-group-item">Tanggal : {{ $pengaduan->tanggal_pengaduan }}</li>
+								  <li class="list-group-item">Judul_pengaduan : {{ $pengaduan->judul_pengaduan }}</li>
+		                  		<li class="list-group-item">Isi Pengaduan : {{ $pengaduan->isi_pengaduan }}</li>
+		                  		
 								  <li class="list-group-item">Lokasi : {{ $pengaduan->lokasi }}</li>
 								  <li class="list-group-item">Detail Lokasi : {{ $pengaduan->detail_lokasi }}</li>
-		                  		<li class="list-group-item">Nama : {{ $pengaduan->users->name }}</li>
-		                  		<li class="list-group-item">Judul_pengaduan : {{ $pengaduan->judul_pengaduan }}</li>
-		                  		<li class="list-group-item">Isi Pengaduan : {{ $pengaduan->isi_pengaduan }}</li>
 		                  		
 		                  		<li class="list-group-item">
 		                  		</li>
 		                  	</ul>
 							  <div class="div row">
 							  <a class=" mx-2 btn btn-primary " href="{{ route('masyarakat.edit', $pengaduan->id) }}"> Edit</a>
-							  <form action="{{ route('masyarakat.hapus.pengaduan', $pengaduan->id) }}" method="post">
-                                    @method ('delete')
-                                    @csrf
-									<button type="submit" class=" mx-1 btn btn-danger" onclick="return confirm('Yakin?');">
-                                    Hapus </button>  
-								</form>
 							  <a class="mx-1 btn btn-success" href="{{ route('masyarakat.aduan') }}">Kembali</a>
 							  
 							</div>

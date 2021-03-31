@@ -35,8 +35,6 @@
 				<th>Lokasi</th>
 				<th>Detail Lokasi</th>
 				<th>Tanggal Tanggapan</th>
-				<th>Nama Petugas</th>
-				<th>Isi Tanggapan</th>
 				<th>Status</th>
 			</tr>
 			@foreach ($pengaduan as $item)
@@ -48,9 +46,7 @@
 				<td>{{ $item->isi_pengaduan }}</td>
 				<td>{{ $item->lokasi }}</td>	
 				<td>{{ $item->detail_lokasi }}</td>	
-				<td>{{ $item->created_at }}</td>	
-				<td>{{ $item->nama_petugas }}</td>	
-				<td>{{ $item->isi_tanggapan }}</td>		
+				<td>{{ $item->created_at }}</td>		
 				<td>{{ $item->status }}</td>
 			</tr>
 			@endforeach

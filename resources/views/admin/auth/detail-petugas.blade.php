@@ -22,7 +22,7 @@
                                         <li class="list-group-item"> Email  : {{ $user->email}}</li>
                                         <li class="list-group-item">
                                             <div class="row">
-                                                <form action="{{ route ('admin.nonaktif.petugas', $user->id) }}" method="post">
+                                                <form action="{{ route ('admin.hapus.petugas', $user->id) }}" method="post">
                                                 @method ('delete')
                                                 @csrf
                                                 <button type="submit" class="mx-2 btn btn-danger" onclick="return confirm('Yakin?');">

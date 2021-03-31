@@ -88,7 +88,6 @@
 							    @endforeach
 							  </tbody>
 							</table>
-							{{ $pengaduan->links() }}
 		                </div>
 		            </div>
 		        </div>

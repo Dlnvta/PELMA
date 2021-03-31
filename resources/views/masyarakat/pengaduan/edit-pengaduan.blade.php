@@ -76,7 +76,7 @@
 						  </div>
 
 						  <div class="form-group">
-						    <label for="exampleInputPassword1">Isi Pengaduan</label>
+						    <label for="exampleInputPassword1">Detail Lokasi</label>
 						    <textarea name="detail_lokasi" type="text" class="form-control @error('detail_lokasi') is-invalid @enderror" >{{ $pengaduan->detail_lokasi }}</textarea>
 
 						    @error('detail_lokasi')

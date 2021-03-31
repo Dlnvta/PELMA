@@ -21,6 +21,9 @@
     <!-- Custom styles for this template-->
     <link href="{{ url('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="{{ url('datatable/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('datatable/css/responsive.dataTables.min.css') }}">
+
 </head>
 
 <body id="page-top">
@@ -131,12 +134,12 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Tekan "Logout" jika ingin meninggalkan halaman ini.</div>
+                <div class="modal-body">Tekan "Keluar" jika ingin meninggalkan halaman ini.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                     <a class="btn btn-primary" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();">Logout</a>
+                         document.getElementById('logout-form').submit();">Keluar</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
@@ -154,6 +157,16 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ url('assets/js/sb-admin-2.min.js') }}"></script>
+
+    <script type="text/javascript" language="Javascript" src="{{ url('datatable/js/jquery-3.3.1.js') }}"></script>
+    <script type="text/javascript" language="javascript" src="{{ url('datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" language="javascript" src="{{ url('datatable/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ url('datatable/js/dataTables.responsive.min.js') }}"></script>
+    <script type="text/javaScript">
+        $(document).ready( function () {
+                $('#dataTable').DataTable();
+            } );
+    </script>
 
 </body>
 

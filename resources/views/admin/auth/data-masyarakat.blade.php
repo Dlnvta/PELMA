@@ -15,16 +15,10 @@
 			</div>
 			@endif
 	        <div class="row">
-	        	<div class="col-lg-8 mb-4">
+	        	<div class="col-lg-12 mb-4">
 	            <!-- Approach -->
 		            <div class="card shadow mb-4">
 		                <div class="card-header py-3">
-		                    <h6 class="m-0 font-weight-bold text-primary">
-							<form class="form-inline" action="{{ route ('admin.aduan.search') }}" method="post">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-							</h6>
 		                </div>
 		                <div class="card-body">
 		                    <table class="table table-bordered" id="dataTable" width="100%" cellspasing="0">

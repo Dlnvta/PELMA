@@ -22,7 +22,7 @@
 		            role="button" aria-expanded="true" aria-controls="collapseCardExample">
 		            <h6 class="m-0 font-weight-bold text-primary">Form Pengaduan</h6>
 		        </a>
-		        <!-- Card Content - Collapse -->
+		        <!-- Form Pengaduan-->
 		        <div class="collapse show" id="collapseCardExample">
 		            <div class="card-body">
 		            	<form method="post" action="{{ route('masyarakat.aduan.kirim') }}" enctype="multipart/form-data">
@@ -101,6 +101,7 @@
 		    </div>
 	    </div>
 
+		<!--Tabel Pengaduan Saya-->
 		<div class="col-lg-6">
 			<div class="card shadow mb-4">
 				<a href="#collapsCardExample" class="d-block card-header py-3 alert-primary" data-toggle="collapse"

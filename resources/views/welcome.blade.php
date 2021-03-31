@@ -66,8 +66,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">Pelaporan Masyarakat di Kecamatan Dawuan</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">Bersama-sama memperbaiki kehidupan bermasyarakat yang lebih baik</h2>
+          <h1 data-aos="fade-up">Pelaporan Fasilitas Umum di Kecamatan Dawuan</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">Bersama-sama memperbaiki kenyamanan publik yang lebih baik</h2>
           <div data-aos="fade-up" data-aos-delay="600">
           </div>
         </div>
