@@ -3,7 +3,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-feather-alt"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">PELMA</div>
+                <div class="sidebar-brand-text mx-3">PELMADA</div>
             </a>
 
             @hasrole('admin')

@@ -106,7 +106,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; PELMA 2021</span>
+                        <span>Copyright &copy; PELMADA 2021</span>
                     </div>
                 </div>
             </footer>

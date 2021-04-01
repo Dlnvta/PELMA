@@ -42,7 +42,7 @@
                                 <div class="div row">
                                 <div class="col-sm-6 mb-3">
                                         <input onkeypress="return hanyaAngka(event)" type="text" class="form-control form-control-user @error('nik') is-invalid @enderror" 
-                                        name="nik" placeholder="NIK" value="{{ old('nik') }}">
+                                        name="nik" placeholder="NIK" value="{{ old('nik') }}" autofocus>
 
                                         @error('nik')
                                             <span class="invalid-feedback" role="alert">
@@ -54,7 +54,7 @@
                                     <div class="col-sm-6">
                                         <input onkeypress="return event.charCode < 48 || event.charCode > 57" type="text" class="form-control form-control-user @error('name') is-invalid @enderror" 
                                         id="name" aria-describedby="nameHelp" name="name" placeholder="Nama Lengkap" value="{{ old('name') }}" 
-                                        required autocomplete="name" autofocus>
+                                        required autocomplete="name" >
 
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
@@ -69,7 +69,7 @@
                                 <div class="from-group row">
                                     <div class="col-sm-6 mb-3">
                                         <input type="email" class="form-control form-control-user @error('email') is-invalid @enderror" 
-                                        id="" aria-describedby="emailHelp" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        id="" aria-describedby="emailHelp" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email">
 
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -94,7 +94,7 @@
                                 <div class="div row">
                                     <div class="col-sm-6 mb-3">
                                         <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror"
-                                        id="password" aria-describedby="passwordHelp" name="password" placeholder="Password" value="{{ old('password') }}" required autocomplete="password" autofocus>
+                                        id="password" aria-describedby="passwordHelp" name="password" placeholder="Password" value="{{ old('password') }}" required autocomplete="password">
 
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">

@@ -93,8 +93,11 @@
                             @enderror
 						    <small id="emailHelp" class="form-text text-muted">File bukti wajib diisi</small>
 						  </div>
-
+						  @if (Auth::user()->email_verified_at == null)
+						  <button type="submit" disabled style="background-color: gray;">Submit</button>
+						  @else
 						  <button type="submit" class="btn btn-primary">Submit</button>
+						  @endif
 						</form>
 		            </div>
 		        </div>

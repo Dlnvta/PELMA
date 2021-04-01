@@ -24,29 +24,29 @@ class UserSeeder extends Seeder
         $masyarakatRole = Role::where('name', 'masyarakat')->first();
 
         $admin = User::create([
-            'name' => 'Admin',
-            'nik'   => '0025670965327654321',
-            'email' => 'admin@gmail.com',
+            'name' => 'Alvin Alfiansyah',
+            'nik'   => '3203012503770011',
+            'email' => 'alvin@gmail.com',
             'email_verified_at' => Carbon::now(),
             'telp'  => '085321987009',
-            'password' => bcrypt('admin1234')
+            'password' => bcrypt('alvin1234')
         ]);
         
         $petugas = User::create([
-            'name' => 'Petugas',
-            'nik'   => '0035678902341577',
-            'email' => 'petugas@gmail.com',
-            'email_verified_at' => Carbon::now(),
-            'telp'  => '087727584499',
-            'password' => bcrypt('petugas1234')
-        ]);
-        $masyarakat = User::create([
-            'name' => 'Nirvana Harani',
-            'nik'   => '0021230095678948',
-            'email' => 'novitadela97@gmail.com',
+            'name' => 'Regan Algibran',
+            'nik'   => '3213275101730001',
+            'email' => 'regan@gmail.com',
             'email_verified_at' => Carbon::now(),
             'telp'  => '085119876521',
-            'password' => bcrypt('vana1212')
+            'password' => bcrypt('regan1234')
+        ]);
+        $masyarakat = User::create([
+            'name' => 'Dela Novita',
+            'nik'   => '3213276911020002',
+            'email' => 'novitadela97@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'telp'  => '087727584499',
+            'password' => bcrypt('dela1212')
         ]);
 
         $admin->roles()->attach($adminRole);

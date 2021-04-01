@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>PELMA</title>
+  <title>PELMADA</title>
   <meta content="" name="description">
 
   <meta content="" name="keywords">
@@ -44,12 +44,11 @@
 
       <a href="" class="logo d-flex align-items-center">
         <img src="assets2/img/logo.png" alt="">
-        <span>PELMA</span>
+        <span>PELMADA</span>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Pelma</a></li>
           <li><a class="nav-link scrollto" href="#values">Panduan</a></li>
           <li><a class="nav-link scrollto" href="{{ route('login') }}">Masuk</a></li>
           <li><a class="nav-link scrollto" href="{{ route('register') }}">Daftar</a></li>
@@ -67,7 +66,7 @@
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up">Pelaporan Fasilitas Umum di Kecamatan Dawuan</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">Bersama-sama memperbaiki kenyamanan publik yang lebih baik</h2>
+          <h2 data-aos="fade-up" data-aos-delay="400">Sampaikan Pengaduan Anda Untuk Dawuan yang Lebih Baik </h2>
           <div data-aos="fade-up" data-aos-delay="600">
           </div>
         </div>

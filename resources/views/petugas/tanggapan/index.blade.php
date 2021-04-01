@@ -54,7 +54,7 @@
 							  	<div class="form-group">
 							    <input type="hidden" class="form-control" id="pengaduan_id" name="pengaduan_id" aria-describedby="emailHelp" value="{{ $pengaduan->id }}">
 							    <label for="exampleInputEmail1">Tulis Tanggapan</label>
-							    <input type="text" class="form-control form-control-user @error('isi_tanggapan') is-invalid @enderror" id="tanggapan" name="isi_tanggapan" aria-describedby="emailHelp">
+							    <textarea type="text" class="form-control form-control-user @error('isi_tanggapan') is-invalid @enderror" id="tanggapan" name="isi_tanggapan" aria-describedby="emailHelp"></textarea>
 								@error('isi_tanggapan')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
