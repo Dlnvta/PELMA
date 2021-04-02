@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'PELMA')
+@section('title', 'PELMADA')
 
 @section('content')
 <!-- Begin Page Content -->
@@ -16,27 +16,26 @@
 		                <div class="card-body">
                             <img class="img-fluid px-3 px-sm-4 mt-3 mb-4 " src="{{ url($pengaduan->foto) }}" alt="">
 		                  	<ul class="list-group list-group-flush"> 
-							  <li class="list-group-item">Status : @if($pengaduan->status == 'pending')
-								<p class="badge badge-pill badge-warning mx-4">{{$pengaduan->status}} </p>
-								@elseif($pengaduan->status == 'proses')
-								<p class="badge badge-pill badge-primary mx-4">{{$pengaduan->status}} </p>
-								@else($pengaduan->status == 'selesai')
-								<p class="badge badge-pill badge-success mx-4">{{$pengaduan->status}} </p>
-								@endif</li>
+							  	<li class="list-group-item">Status : @if($pengaduan->status == 'pending')
+									<p class="badge badge-pill badge-warning mx-4">{{$pengaduan->status}} </p>
+									@elseif($pengaduan->status == 'proses')
+									<p class="badge badge-pill badge-primary mx-4">{{$pengaduan->status}} </p>
+									@else($pengaduan->status == 'selesai')
+									<p class="badge badge-pill badge-success mx-4">{{$pengaduan->status}} </p>
+									@endif
+								</li>
+
 		                  		<li class="list-group-item">Tanggal : {{ $pengaduan->tanggal_pengaduan }}</li>
-								  <li class="list-group-item">Judul_pengaduan : {{ $pengaduan->judul_pengaduan }}</li>
+								<li class="list-group-item">Judul_pengaduan : {{ $pengaduan->judul_pengaduan }}</li>
 		                  		<li class="list-group-item">Isi Pengaduan : {{ $pengaduan->isi_pengaduan }}</li>
-		                  		
-								  <li class="list-group-item">Lokasi : {{ $pengaduan->lokasi }}</li>
-								  <li class="list-group-item">Detail Lokasi : {{ $pengaduan->detail_lokasi }}</li>
-		                  		
-		                  		<li class="list-group-item">
-		                  		</li>
+								<li class="list-group-item">Lokasi : {{ $pengaduan->lokasi }}</li>
+								<li class="list-group-item">Detail Lokasi : {{ $pengaduan->detail_lokasi }}</li>
+		                  		<li class="list-group-item"></li>
 		                  	</ul>
+
 							  <div class="div row">
-							  <a class=" mx-2 btn btn-primary " href="{{ route('masyarakat.edit', $pengaduan->id) }}"> Edit</a>
-							  <a class="mx-1 btn btn-success" href="{{ route('masyarakat.aduan') }}">Kembali</a>
-							  
+								<a class=" mx-2 btn btn-primary " href="{{ route('masyarakat.edit', $pengaduan->id) }}"> Edit</a>
+								<a class="mx-1 btn btn-success" href="{{ route('masyarakat.aduan') }}">Kembali</a> 
 							</div>
 		                </div>
 		            </div>

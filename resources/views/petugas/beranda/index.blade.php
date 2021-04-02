@@ -1,5 +1,5 @@
 @extends ('layouts/main')
-@section ('title', 'PELMA')
+@section ('title', 'PELMADA')
 
 @section ('content')
 
@@ -72,9 +72,6 @@
 				</div>
 			</div>
 		</div>
-</div>
-<div class="col-lg-6">
-	
-</div>
+	</div>
 </div>
 @endsection                

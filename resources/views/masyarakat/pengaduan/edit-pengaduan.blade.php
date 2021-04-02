@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'PELMA')
+@section('title', 'PELMADA')
 
 @section('content')
 <!-- Begin Page Content -->
@@ -9,9 +9,6 @@
     @if (session('status'))
     <div class="alert alert-primary alert-dismissible fade show" role="alert">
     	<strong>Berhasil!</strong> {{ session('status') }}
-    	<button type="button" class="close" data-dismis="alert" aria-lable="Close">
-    		<span aria-hidden="true">&times;</span>
-    	</button>
     </div>
     @endif
     <div class="row">

@@ -1,5 +1,5 @@
 @extends ('layouts/main')
-@section ('title', 'PELMA')
+@section ('title', 'PELMADA')
 
 @section ('content')
 
@@ -21,7 +21,7 @@
 		            <div class="card-body">
 		            	<div class="text-center">
 		            		<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="{{ url( $item->foto) }}" alt="">
+                            src="{{ url( $item->foto) }}" alt="">
 		            	</div>
 						<small?>{{ $item->tanggal_pengaduan }}</small>
 						@if($item->status == 'pending')

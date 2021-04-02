@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'PELMA')
+@section('title', 'PELMADA')
 
 @section('content')
 <!-- Begin Page Content -->
@@ -19,9 +19,8 @@
 			            <div class="card-body">
 			            	<div class="text-center">
 			            		<img class="img-fluid px-3 px-sm-4 mt-3 mb-4"
-	                                            src="{{ url( $pengaduan->foto ) }}" alt="">
+	                            src="{{ url( $pengaduan->foto ) }}" alt="">
 			            	</div>
-
 			            	<small>{{ $pengaduan->tanggal_pengaduan }}</small>
 							@if($pengaduan->status == 'pending')
 							<p class="badge badge-pill badge-warning mx-4">{{$pengaduan->status}} </p>
@@ -30,14 +29,16 @@
 							@else($pengaduan->status == 'selesai')
 							<p class="badge badge-pill badge-success mx-4">{{$pengaduan->status}} </p>
 							@endif
-							
 			            	<p>{{ $pengaduan->isi_pengaduan }}</p>
 			            	<p>Detail Lokasi : {{ $pengaduan->detail_lokasi }}</p>
 			            </div>
 			        </div>
+
 			    </div>
 		    </div>
 	    </div>
+
+		<!-- Form Tanggapan -->
 	    <div class="row">
 		    <div class="col-lg-6">
 			    <div class="card shadow mb-4">
@@ -51,29 +52,35 @@
 			            <div class="card-body">
 			            	<form action="{{ route('petugas.tanggapan.kirim') }}" method="post">
 			            		@csrf
+
 							  	<div class="form-group">
-							    <input type="hidden" class="form-control" id="pengaduan_id" name="pengaduan_id" aria-describedby="emailHelp" value="{{ $pengaduan->id }}">
-							    <label for="exampleInputEmail1">Tulis Tanggapan</label>
-							    <textarea type="text" class="form-control form-control-user @error('isi_tanggapan') is-invalid @enderror" id="tanggapan" name="isi_tanggapan" aria-describedby="emailHelp"></textarea>
+							    <input type="hidden" class="form-control" id="pengaduan_id" name="pengaduan_id" value="{{ $pengaduan->id }}">
+							    <label for="">Tulis Tanggapan</label>
+							    <textarea type="text" class="form-control form-control-user @error('isi_tanggapan') is-invalid @enderror" 
+										  id="tanggapan" name="isi_tanggapan"></textarea>
+
 								@error('isi_tanggapan')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                 @enderror 
 								</div>
+								
 								<div class="form-group form-control-user @error('status') is-invalid @enderror">
-										<select class="form-control" id="status" name="status">
+									<select class="form-control" id="status" name="status">
 										<option value=""><i>Status</i></option>
 										<option value="pending">Pending</option>
 										<option value="proses">Proses</option>
 										<option value="selesai">Selesai</option>
-										</select>
+									</select>
+
 									@error('status')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
 												</span>
 									@enderror  
 								</div>
+
 							  <button type="submit" class="btn btn-primary">Submit</button>
 							</form>
 			            </div>
@@ -81,6 +88,7 @@
 			    </div>
 		    </div>
 
+			<!-- Form Isi Tanggapannya -->
 		    <div class="col-lg-6">
 			    <div class="card shadow mb-4">
 			        <!-- Card Header - Accordion -->
@@ -92,17 +100,19 @@
 			        <div class="collapse show" id="collapseCardExample">
 			            <div class="card-body">
 			            	<ul class="list-group">
-			            		@foreach ( $tanggapan as $item )
+			            	@foreach ( $tanggapan as $item )
 							  <li class="list-group-item d-flex justify-content-between align-items-center">
 							    {{ $item->isi_tanggapan }}
 							    <span class="badge badge-primary badge-pill">{{ $item->name }}</span>
 							  </li>
-							  @endforeach
+							@endforeach
 							</ul>
 			            </div>
 			        </div>
 			    </div>
 		    </div>
+
 	    </div>
-    </div>
+
+</div>
 @endsection

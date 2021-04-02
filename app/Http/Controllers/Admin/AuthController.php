@@ -130,42 +130,12 @@ class AuthController extends Controller
         ]);
     }
 
-    //Nonaktif Petugas
+    //Hapus Petugas
     public function petugas_hapus($id)
     {
         User::destroy($id);
         return redirect()->route('admin.petugas')->with ('status', 'Berhasil Dihapus');
     }
-
-    /*public function edit_petugas($id)
-    {
-        $user = User::find($id);
-
-        return view('admin.auth.edit-petugas',[
-            'user' => $user,
-        ]);
-    }
-
-    public function update(User $user)
-    { 
-        $this->validate(request(), [
-            'name' => 'required',
-            'nik' => 'required',
-            'email' => 'required|email|unique:users',
-            'telp' => 'required|min:12',
-            'password' => 'required|min:6|confirmed'
-        ]);
-
-        $user->name = request('name');
-        $user->nik = request('nik');
-        $user->email = request('email');
-        $user->telp = request('telp');
-        $user->password = bcrypt(request('password'));
-
-        $user->save();
-
-        return redirect()->route('admin.petugas');
-    }*/
 
     //Data Masyarakat
     public function masyarakat() {
@@ -186,14 +156,6 @@ class AuthController extends Controller
             'masyarakat' => $masyarakat,
         ]);
     }
-
-    /*
-    public function masyarakat_nonaktif($id)
-    {
-        User::destroy($id);
-        return redirect()->route('admin.masyarakat')->with ('status', 'Berhasil Dinonaktifkan');;
-    }*/
-
     
     //Report
     public function pengaduan() {

@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
         $masyarakatRole = Role::where('name', 'masyarakat')->first();
 
         $admin = User::create([
-            'name' => 'Alvin Alfiansyah',
+            'name' => 'Admin',
             'nik'   => '3203012503770011',
             'email' => 'alvin@gmail.com',
             'email_verified_at' => Carbon::now(),
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
         ]);
         
         $petugas = User::create([
-            'name' => 'Regan Algibran',
+            'name' => 'petugas',
             'nik'   => '3213275101730001',
             'email' => 'regan@gmail.com',
             'email_verified_at' => Carbon::now(),

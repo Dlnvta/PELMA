@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'PELMA')
+@section('title', 'PELMADA')
 
 @section('content')
 <!-- Begin Page Content -->
@@ -11,6 +11,7 @@
     	<strong>Berhasil!</strong> {{ session('status') }}
     </div>
     @endif
+
     <div class="row">
 	    <div class="col-lg-6">
 		    <div class="card shadow mb-4">
@@ -25,6 +26,7 @@
 		            	<form method="post" action="{{ route('petugas.profile.update', $user->id) }}" enctype="multipart/form-data">
 		            		@method('patch')
 		            		@csrf
+
 						  <div class="form-group">
 						    <label for="exampleInputEmail1">NIk</label>
 						    <input onkeypress="return hanyaAngka(event)" name="nik" type="text" class="form-control @error('nik') is-invalid @enderror" 
@@ -80,27 +82,28 @@
 		        </div>
 		    </div>
 	    </div>
-            
-                <div class="col-lg-6 mb-4">
-                        <!-- Approach -->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Profile Saya</h6>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush"> 
-                                    <li class="list-group-item">Nama : {{ $user->name }}</li>
-                                    <li class="list-group-item">NIK : {{ $user->nik }}</li>
-                                    <li class="list-group-item">Telp : {{ $user->telp }}</li>
-                                    <li class="list-group-item">Email : {{ $user->email }}</li>
-                                    <li class="list-group-item">
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                </div>      	    
+
+        <!-- Detail Profile --> 
+         <div class="col-lg-6 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Profile Saya</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush"> 
+                        <li class="list-group-item">Nama : {{ $user->name }}</li>
+                            <li class="list-group-item">NIK : {{ $user->nik }}</li>
+                            <li class="list-group-item">Telp : {{ $user->telp }}</li>
+                            <li class="list-group-item">Email : {{ $user->email }}</li>
+                            <li class="list-group-item">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>      	    
     </div>
 </div>
+
 <script>
     function hanyaAngka(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode 
@@ -110,4 +113,5 @@
     return true;
 }
 </script>
+
 @endsection

@@ -1,5 +1,5 @@
 @extends ('layouts/main')
-@section ('title', 'PELMA')
+@section ('title', 'PELMADA')
 
 @section ('content')
 
