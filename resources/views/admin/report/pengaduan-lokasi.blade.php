@@ -34,7 +34,6 @@
 				<th>Isi Pengaduan</th>
 				<th>Lokasi</th>
 				<th>Detail Lokasi</th>
-				<th>Tanggal Tanggapan</th>
 				<th>Status</th>
 			</tr>
 			@foreach ($pengaduan as $item)
@@ -45,8 +44,7 @@
 				<td>{{ $item->judul_pengaduan }}</td>
 				<td>{{ $item->isi_pengaduan }}</td>
 				<td>{{ $item->lokasi }}</td>	
-				<td>{{ $item->detail_lokasi }}</td>	
-				<td>{{ $item->created_at }}</td>	
+				<td>{{ $item->detail_lokasi }}</td>		
 				<td>{{ $item->status }}</td>
 			</tr>
 			@endforeach

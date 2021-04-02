@@ -30,11 +30,6 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'admin'])->name(
     //edit profile admin
     Route::get('/profile', 'AuthController@profile')->name('profile');
     Route::patch('/profile/update', 'AuthController@profile_update')->name('profile.update');
-    //data aduan
-    Route::get('/aduan', 'AuthController@data_aduan')->name('data.pengaduan');
-    Route::get('/detail/aduan/{id}', 'AuthController@detail_aduan')->name('detail.aduan');
-    //search pengaduan
-    Route::post('/search', 'AuthController@search')->name('aduan.search');
     //register petugas
     Route::get('/petugas', 'AuthController@petugas')->name('petugas');
     Route::post('/petugas/kirim', 'AuthController@petugas_tambah')->name('petugas.kirim');
@@ -43,9 +38,9 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'admin'])->name(
     Route::patch('/edit/petugas/{id}/update', 'AuthController@update')->name('update');
     //detail petugas
     Route::get('/detail/{id}', 'AuthController@detail_petugas')->name('detail.petugas');
-    //nonaktif petugas
+    //hapus petugas
     Route::delete('/hapus/{id}', 'AuthController@petugas_hapus')->name('hapus.petugas');
-    //masyarakat
+    //data masyarakat
     Route::get('/masyarakat', 'AuthController@masyarakat')->name('masyarakat');
     Route::get('/detail/masyarakat/{id}', 'AuthController@detail_masyarakat')->name('detail.masyarakat');
     //report 

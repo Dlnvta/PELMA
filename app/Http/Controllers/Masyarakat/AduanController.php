@@ -104,6 +104,7 @@ class AduanController extends Controller
         ]);
     }
 
+    //Kirim Editan
     public function edit_kirim(Request $request, $id) 
     {
 
@@ -153,11 +154,5 @@ class AduanController extends Controller
         return redirect()->back()->with('status', 'Edit Berhasil');
         }
     }
-
-    //Hapus Pengaduan Saya
-    public function hapus_pengaduan($id)
-    {
-        Pengaduan::destroy($id);
-        return redirect()->route('masyarakat.aduan')->with ('status', 'Berhasil Dihapus');
-    }
+    
 }

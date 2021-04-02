@@ -36,37 +36,6 @@ class AuthController extends Controller
 
         return redirect()->back()->with('status', 'Di Update');
     }
-
-    //Data Pengaduan
-    public function data_aduan() {
-        $pengaduan = Pengaduan::orderBy('id', 'DESC')->paginate(2);
-
-        return view('admin.auth.data-aduan', [
-            'pengaduan' => $pengaduan,
-        ]);
-    }
-
-    //Detail Pengaduan
-    public function detail_aduan($id) {
-
-        $pengaduan = Pengaduan::find($id);
-
-        return view('admin.auth.detail-aduan', [
-            'pengaduan' => $pengaduan,
-        ]);
-    }
-
-    //Search Pengaduan
-    public function search(Request $request)
-    {
-        $search = $request->search;
-        $pengaduan  = Pengaduan::where('judul_pengaduan', 'like', '%'.$search. "%")->paginate(10);
-
-        return view ('admin.auth.data-aduan',[
-            'search' => $search,
-            'pengaduan' => $pengaduan
-        ]);
-    }
     
     //Data Petugas
     public function petugas() {

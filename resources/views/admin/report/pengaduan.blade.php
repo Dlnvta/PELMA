@@ -58,10 +58,9 @@
 
 		</div>
 
-
+			<!-- Tampilan report di webnya -->
 	        <div class="row">
 	        	<div class="col-lg mb-4">
-	            <!-- Approach -->
 		            <div class="card shadow mb-4">
 		                <div class="card-body">
 		                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
